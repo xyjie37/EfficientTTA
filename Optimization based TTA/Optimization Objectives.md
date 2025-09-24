@@ -6,4 +6,6 @@ The essence of entropy-minimization Test-Time Adaptation (TTA) is to take inform
 Tent is a Test-Time Adaptation(TTA) method that operates exclusively on the model and the current unlabeled test data. Its core principle is to minimize the Shannon entropy of the model’s predictions. This process dynamically tunes the affine parameters of the normalization layers, which in turn improves the model’s generalization performance under distribution shift.  
 Edge-friendly&nbsp;✅   
 Tent achieves its update in merely one forward and one backward pass, restricting optimization to the affine parameters of the normalization layers.
+- `DSI`[CoRR'2019]**Dynamic Scale Inference by Entropy Minimization**[[paper](https://arxiv.org/pdf/1908.03182)]
+
 
