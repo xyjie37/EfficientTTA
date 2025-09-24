@@ -7,5 +7,8 @@ Tent is a Test-Time Adaptation(TTA) method that operates exclusively on the mode
 Edge-friendly&nbsp;✅   
 Tent achieves its update in merely one forward and one backward pass, restricting optimization to the affine parameters of the normalization layers.
 - `DSI`[CoRR'2019]**Dynamic Scale Inference by Entropy Minimization**[[paper](https://arxiv.org/pdf/1908.03182)]
+DSI is a Test-Time Adaptation(TTA) algorithm designed to optimize the trade-off between accuracy and computational efficiency by dynamically selecting the model’s input scale. It employs prediction entropy as a confidence measure. Starting from the lowest resolution, the method incrementally scales the input. At each scale, the classification entropy is computed; if it drops below a set threshold, the current prediction is output and the inference is halted, thus avoiding the computational cost of processing higher resolutions.
+Edge-friendly&nbsp;✅
+DSI introduces a multi-resolution inference mechanism and an entropy-based early stopping mechanism. On the ImageNet dataset, it achieves a reduction of approximately 30% in average FLOPs at the cost of only a 0.1% drop in accuracy.
 
 
