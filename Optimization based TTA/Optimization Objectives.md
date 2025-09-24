@@ -1,2 +1,3 @@
 ## Optimization Objectives
 Methods that optimize based on unsupervised objectives constitute a classical category of test time adaptation algorithms. These approaches are implemented through minimizing predictive uncertainty, adapting batch statistics, or leveraging density estimation, and are characterized by their reliance on label-free objective functions derived from model outputs or data distributions to align the model with the target domain without supervised signals. In subsequent discussions, we will systematically introduce unsupervised optimization-based test time adaptation algorithms according to their different methodological approaches and analyze whether they are edge-friendly.
+### entropy minimization
