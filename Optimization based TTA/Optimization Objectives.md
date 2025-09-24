@@ -11,8 +11,6 @@ DSI is a Test-Time Adaptation(TTA) algorithm designed to optimize the trade-off 
 Edge-friendly&nbsp;✅   
 DSI introduces a multi-resolution inference mechanism and an entropy-based early stopping mechanism. On the ImageNet dataset, it achieves a reduction of approximately 30% in average FLOPs at the cost of only a 0.1% drop in accuracy.
 - `EATA`[ICML'2022]**Efficient Test-Time Model Adaptation without Forgetting**[[paper](https://proceedings.mlr.press/v162/niu22a.html)][[code](https://github.com/mr-eggplant/EATA)]
-EATA is a Test-Time Adaptation(TTA) algorithm that combines sample selection with regularization to prevent forgetting. Its core mechanism involves a dual-sample filtering process: first, it discards unreliable samples based on their prediction entropy; second, it removes samples with high similarity using a diversity weight. Backpropagation is then performed exclusively on this refined subset to minimize entropy. To counteract forgetting of in-distribution data during continual adaptation, EATA further integrates a Fisher regularization term.
-
-Edge-friendly&nbsp;✅  
+EATA is a Test-Time Adaptation(TTA) algorithm that combines sample selection with regularization to prevent forgetting. Its core mechanism involves a dual-sample filtering process: first, it discards unreliable samples based on their prediction entropy; second, it removes samples with high similarity using a diversity weight. Backpropagation is then performed exclusively on this refined subset to minimize entropy. To counteract forgetting of in-distribution data during continual adaptation, EATA further integrates a Fisher regularization term.   Edge-friendly&nbsp;✅  
 By selectively backpropagating through a filtered subset of samples and exclusively updating the affine parameters in its BN layers, EATA reduces inference time by 10% relative to Tent on ImageNet-C.
 
