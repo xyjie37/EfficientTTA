@@ -6,11 +6,11 @@ The essence of entropy-minimization Test-Time Adaptation (TTA) is to take inform
 Tent is a Test-Time Adaptation(TTA) method that operates exclusively on the model and the current unlabeled test data. Its core principle is to minimize the Shannon entropy of the model’s predictions. This process dynamically tunes the affine parameters of the normalization layers, which in turn improves the model’s generalization performance under distribution shift.  
 Edge-friendly&nbsp;✅   
 Tent achieves its update in merely one forward and one backward pass, restricting optimization to the affine parameters of the normalization layers.
-- `DSI`[CoRR'2019]**Dynamic Scale Inference by Entropy Minimization**[[paper](https://arxiv.org/pdf/1908.03182)]
+- `DSI`[CoRR'2019]**Dynamic Scale Inference by Entropy Minimization**[[paper](https://arxiv.org/pdf/1908.03182)]   
 DSI is a Test-Time Adaptation(TTA) algorithm designed to optimize the trade-off between accuracy and computational efficiency by dynamically selecting the model’s input scale. It employs prediction entropy as a confidence measure. Starting from the lowest resolution, the method incrementally scales the input. At each scale, the classification entropy is computed; if it drops below a set threshold, the current prediction is output and the inference is halted, thus avoiding the computational cost of processing higher resolutions.   
 Edge-friendly&nbsp;✅   
 DSI introduces a multi-resolution inference mechanism and an entropy-based early stopping mechanism. On the ImageNet dataset, it achieves a reduction of approximately 30% in average FLOPs at the cost of only a 0.1% drop in accuracy.
-- `EATA`[ICML'2022]**Efficient Test-Time Model Adaptation without Forgetting**[[paper](https://proceedings.mlr.press/v162/niu22a.html)][[code](https://github.com/mr-eggplant/EATA)]
+- `EATA`[ICML'2022]**Efficient Test-Time Model Adaptation without Forgetting**[[paper](https://proceedings.mlr.press/v162/niu22a.html)][[code](https://github.com/mr-eggplant/EATA)]   
 EATA is a test-time adaptation method that selectively updates a refined sample subset. It employs a dual-filtering mechanism, based on entropy and diversity weights, to exclude unreliable and redundant samples. On this filtered subset, it performs entropy minimization via backpropagation, while a Fisher regularization term is concurrently applied to mitigate forgetting of in-distribution data during continual adaptation.  
 Edge-friendly&nbsp;✅  
 By selectively backpropagating through a filtered subset of samples and exclusively updating the affine parameters in its BN layers, EATA reduces inference time by 10% relative to Tent on ImageNet-C.
