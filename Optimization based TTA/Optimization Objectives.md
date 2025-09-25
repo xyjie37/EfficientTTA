@@ -30,6 +30,10 @@ UniEnt focuses more on robustness issues. The algorithm only updates the model's
 CETA is a Test-Time Adaptation(TTA) algorithm that introduces confidence calibration through entropy minimization. It proposes a calibrated entropy loss that augments the standard entropy with a sample-level regularization term. This term adaptively adjusts the intensity of entropy minimization by leveraging the difference between the Top-1 and Top-2 predicted probabilities, thereby preventing the model from becoming overconfident.     
 Edge-friendly&nbsp;🔶   
 CETA prioritizes model calibration over computational efficiency. However, its suitability for online scenarios and the characteristic of updating only affine parameters make it promising for edge deployment. Overall, the algorithm introduces only minimal computational overhead compared to Tent.
+- `REALM`[WACV'2024]**REALM: Robust Entropy Adaptive Loss Minimization for Improved Single-Sample Test-Time Adaptation**[[paper](https://openaccess.thecvf.com/content/WACV2024/papers/Seto_REALM_Robust_Entropy_Adaptive_Loss_Minimization_for_Improved_Single-Sample_Test-Time_WACV_2024_paper.pdf)][[G-Scholar](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=REALM%3A+Robust+Entropy+Adaptive+Loss+Minimization+for+Improved+Single-Sample+Test-Time+Adaptation&btnG=)]
+REALM introduces a general robust loss function that adaptively adjusts the contribution of each sample’s entropy to the total loss. Rather than coarsely discarding outlier samples, the algorithm intelligently reduces their influence. The loss function in REALM is learnable, and during optimization, gradients are computed simultaneously with respect to the model parameters, shape parameters, and scale parameters, ensuring robust and adaptive performance.
+Edge-friendly&nbsp;🔶     
+The core advantage of REALM lies in its robustness, as the algorithm is not specifically optimized for computational efficiency. REALM supports online scenarios and introduces an acceptable computational overhead compared to Tent, making it viable for edge-deployed applications where high stability is required.
 
 
 
