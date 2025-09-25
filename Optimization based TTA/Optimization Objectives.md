@@ -26,5 +26,5 @@ SAR does not address optimizations for computational efficiency. Its support for
 UniEnt is a Test-Time Adaptation(TTA) algorithm that performs entropy minimization and maximization on filtered samples respectively. The algorithm introduces a Distribution-Aware Filter to distinguish whether samples belong to known or unknown classes. UniEnt applies entropy minimization to known class (csID) samples to improve model classification accuracy, and entropy maximization to unknown class (csOOD) samples to reduce the impact of model overconfidence.   
 Edge-friendly&nbsp;🔶   
 UniEnt focuses more on robustness issues. The algorithm only updates the model's BN affine parameters, making it relatively lightweight. However, it additionally introduces a Distribution-Aware Filter and applies entropy minimization and maximization to samples respectively, resulting in increased computational overhead compared to Tent.
-
+- `CETA`[KDD'2024] **Towards Test Time Adaptation via Calibrated Entropy Minimization**[[paper](https://dl.acm.org/doi/abs/10.1145/3637528.3671672?casa_token=REFEvs1wo2YAAAAA:x6mQ_bHG2MIY0buTx-yluLi1ANP0GDVOoFcNI_hfZfn_RBZPof1LbJdQz7UM45lU2NOEqEj7O0WWwA)]
 
