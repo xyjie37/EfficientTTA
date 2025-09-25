@@ -28,7 +28,7 @@ Edge-friendly&nbsp;🔶
 UniEnt focuses more on robustness issues. The algorithm only updates the model's BN affine parameters, making it relatively lightweight. However, it additionally introduces a Distribution-Aware Filter and applies entropy minimization and maximization to samples respectively, resulting in increased computational overhead compared to Tent.
 - `CETA`[KDD'2024] **Towards Test Time Adaptation via Calibrated Entropy Minimization**[[paper](https://dl.acm.org/doi/abs/10.1145/3637528.3671672?casa_token=REFEvs1wo2YAAAAA:x6mQ_bHG2MIY0buTx-yluLi1ANP0GDVOoFcNI_hfZfn_RBZPof1LbJdQz7UM45lU2NOEqEj7O0WWwA)][[G-Scholar](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=Towards+Test+Time+Adaptation+via+Calibrated+Entropy+Minimization&btnG=)]
 CETA is a Test-Time Adaptation(TTA) algorithm that introduces confidence calibration through entropy minimization. It proposes a calibrated entropy loss that augments the standard entropy with a sample-level regularization term. This term adaptively adjusts the intensity of entropy minimization by leveraging the difference between the Top-1 and Top-2 predicted probabilities, thereby preventing the model from becoming overconfident.     
-Edge-friendly&nbsp;🔶
+Edge-friendly&nbsp;🔶   
 CETA prioritizes model calibration over computational efficiency. However, its suitability for online scenarios and the characteristic of updating only affine parameters make it promising for edge deployment. Overall, the algorithm introduces only minimal computational overhead compared to Tent.
 
 
