@@ -14,4 +14,13 @@ DSI introduces a multi-resolution inference mechanism and an entropy-based early
 EATA is a test-time adaptation method that selectively updates a refined sample subset. It employs a dual-filtering mechanism, based on entropy and diversity weights, to exclude unreliable and redundant samples. On this filtered subset, it performs entropy minimization via backpropagation, while a Fisher regularization term is concurrently applied to mitigate forgetting of in-distribution data during continual adaptation.  
 Edge-friendly&nbsp;✅  
 By selectively backpropagating through a filtered subset of samples and exclusively updating the affine parameters in its BN layers, EATA reduces inference time by 10% relative to Tent on ImageNet-C.
+- `MEMO`[NeurIPS'2022]**MEMO: Test Time Robustness via Adaptation and Augmentation**[[paper](https://proceedings.neurips.cc/paper_files/paper/2022/file/fc28053a08f59fccb48b11f2e31e81c7-Paper-Conference.pdf)][[code](https://github.com/zhangmarvin/memo)]
+MEMO is a Test-Time Adaptation(TTA) algorithm that minimizes the entropy of the marginal predictive distribution over multiple augmented views. The algorithm generates multiple augmented samples from an input, computes their marginal predictive distribution, and optimizes the model parameters to minimize the entropy of this distribution. It then uses the updated model to predict on the original input sample, thereby reducing the impact of non-semantic perturbations.
+Edg-friendly&nbsp;🔶
+MEMO enables single-sample adaptation, making it suitable for edge-based streaming scenarios. However, its update of all model parameters, compared to updating only the Batch Normalization (BN) affine parameters, incurs higher computational costs.
+- `SAR`[ICLR'2023] **TOWARDS STABLE TEST-TIME ADAPTATION INDYNAMIC WILD WORLD**[[paper](https://openreview.net/pdf?id=g2YraF75Tj)][[code](https://github.com/mr-eggplant/SAR)]
+SAR is a Test-Time Adaptation(TTA) algorithm that integrates Reliable Sample Filtering, Sharpness-Aware Minimization, and a Model Recovery Scheme. The algorithm performs model updates exclusively on low-entropy samples and minimizes the worst-case entropy within a neighborhood to avoid converging to sharp minima. To prevent model collapse due to accumulated erroneous updates, SAR maintains a moving average of entropy and rolls back the model when this metric drops anomalously low.
+Edge-friendly&nbsp;🔶
+SAR does not address optimizations for computational efficiency. Its support for online updates and the characteristic of updating only affine transformation parameters make it suitable for edge deployment. However, its Sharpness-Aware Minimization introduces greater computational overhead compared to algorithms such as Tent.
+
 
