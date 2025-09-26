@@ -4,3 +4,5 @@ Consistency-optimized Test-Time Adaptation (TTA) algorithms typically maintain s
 CoTTA optimizes consistency in both temporal and spatial dimensions. It uses soft pseudo-labels from an EMA teacher model as the objective, encouraging consistency between teacher and student predictions. CoTTA also introduces an adaptive sample augmentation mechanism to handle domain gaps, leveraging the source model's prediction probability as confidence. If confidence is below a threshold, the sample is augmented multiple times, and the teacher model's average prediction on these augmented samples serves as the final pseudo-label.   
 Edge-friendly&nbsp;🔶   
 CoTTA is well-suited for streaming online scenarios, which offers advantages in edge deployment settings such as autonomous driving. However, its full parameter update and the dual forward computation of teacher-student models may present challenges in scenarios with extremely limited computational resources.
+
+
